@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import '../css/remix-icons.min.css';
+
+$green: #66DC80;
+$red: #EB3457;
+$purple: #8134AF;
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #1D1741;
+  margin: 0;
+}
+
+.rg-notif {
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 16px;
+  position: fixed;
+  left: 1.2rem;
+  bottom: 1.3rem;
+  border-radius: 10px;
+	background-image: linear-gradient(to right, rgba($green, .5), rgba(255, 255, 255, .05));
+	padding: 15px;
+  display: flex;
+	align-items: center;
+	max-width: 350px;
+	transform: translateX(-400px);
+	opacity: 0;
+	transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+	padding-right: 25px;
+
+  .rg-left {
+    margin-right: 1rem;
+		width: 10%;
+  }
+
+  .rg-right {
+    .rg-content {
+      opacity: .75;
+			margin-top: .1rem;
+    }
+
+    &.rg-show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.rg-notif-error {
+  background-image: linear-gradient(to right, rgba($red, .5), rgba(255, 255, 255, .05));
+	
+  .rg-icon, .rg-title {
+    color: $red;
+  }
+}
+	
+.rg-button {
+  background-color: $green;
+	color: #111;
+	text-decoration: none;
+	padding: 6px 18px;
+	border-radius: 5px;
+	box-shadow: 0 3px 6px rgba($green, .3);
+	transition: box-shadow .4s ease-in-out;
+	margin-top: 0.7rem;
+	display: inline-block;
+
+	&:hover {
+    box-shadow: 0 3px 6px rgba($green, .7);
+  }
+		
+	&.rg-red {
+    background-color: $red;
+		box-shadow: 0 3px 6px rgba($red, .3);
+		color: #fff;
+		&:hover {
+      box-shadow: 0 3px 6px rgba($red, .7);
+    }
+  }
+		
+	&.rg-purple {
+    background-color: $purple;
+		box-shadow: 0 3px 6px rgba($purple, .3);
+		color: #fff;
+		&:hover {
+      box-shadow: 0 3px 6px rgba($purple, .7);
+    }
+  }
+		
+	&.rg-animation {
+    position: relative;
+		overflow: hidden;
+
+		&:before {
+      content: "";
+			display: block;
+			width: 30px;
+			height: 100%;
+			position: absolute;
+			opacity: .3;
+			top: 0;
+			left: 0;
+			background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, 0.03) 1%, hsla(0, 0%, 100%, 0.6) 30%, hsla(0, 0%, 100%, 0.85) 50%, hsla(0, 0%, 100%, 0.85) 70%, hsla(0, 0%, 100%, 0.85) 71%, hsla(0, 0%, 100%, 0));
+			transform: skew(-10deg,0deg);
+			animation: move 5s linear infinite;
+    }
+  }
+}
+	
+@keyframes move {
+  0% {
+    left: 0%;
+  }
+  20% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.rg-title {
+  font-weight: 600;
+	font-size: 18px;
+	color: $green;
+	&.white {
+    color: white;
+		opacity: .8;
+  } 
+} 
+	
+.rg-icon {
+  font-size: 30px;
+	color: $green;
+}
+	
+.yt-thumnail {
+  margin-top: 0.4rem;
+	>a {
+    >img {
+      border-radius: 10px;
+			max-width: 100px;
+			box-shadow: 0 3px 6px rgba($green, .2);
+			transition: box-shadow .4s ease-in-out;
+    }
+		
+    &:hover>img {
+      box-shadow: 0 3px 6px rgba($green, .7);
+    }
+			
+		&:first-child {
+      margin-right: 0.5rem;
+    }
+  }
+}
+	
+.wrapper-button {
+  >a:first-child {
+    margin-right: .5rem;
+  }
+}
+
+.rg-white {
+  color: white;
+}
+
+.rg-black {
+  color: #111;
+}
+
+.rg-red {
+  color: $red;
+}
+
+.rg-green {
+  color: $green;
+}
+	
+
+.rg-purple {
+  color: $purple;
+}
+	
+
+.rg-close {
+  position: absolute;
+	top: 2px;
+	right: 4px;
+	cursor: pointer;
+}
+	
